@@ -46,8 +46,8 @@ plt.ylabel('True Label')
 plt.xlabel('Predicted Label')
 plt.show()
 
-# Save the model
-model_filename = 'breast_cancer_classification_model.pkl'
+# Save the model in the models directory
+model_filename = 'models/breast_cancer_classification_model.pkl'  # Simpan di folder models
 joblib.dump(model, model_filename)
 print(f"Model saved to {model_filename}")
 
