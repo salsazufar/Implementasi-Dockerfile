@@ -1,4 +1,3 @@
-# Import necessary libraries
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -6,7 +5,8 @@ from sklearn.datasets import load_breast_cancer
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
-import joblib  
+import joblib
+import os
 
 # Load the Breast Cancer Wisconsin dataset
 data = load_breast_cancer()
@@ -44,10 +44,11 @@ plt.title('Confusion Matrix')
 plt.colorbar()
 plt.ylabel('True Label')
 plt.xlabel('Predicted Label')
-plt.show()
+plt.savefig('/app/models/confusion_matrix.png')
+plt.close()
 
 # Save the model in the models directory
-model_filename = 'models/breast_cancer_classification_model.pkl'  # Simpan di folder models
+model_filename = '/app/models/breast_cancer_classification_model.pkl'
 joblib.dump(model, model_filename)
 print(f"Model saved to {model_filename}")
 
